@@ -56,7 +56,10 @@
 
     (pkgs.writeShellApplication {
       name = "rebuild";
-      runtimeInputs = [ ];
+      runtimeInputs = [
+        pkgs.nixos-rebuild
+        pkgs.sudo
+      ];
       text = ''
         echo "building your nixos config .. "
         sudo nixos-rebuild switch --flake /home/jadu/codespace/Nixfrost/#itachi
