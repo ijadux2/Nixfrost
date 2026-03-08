@@ -35,17 +35,20 @@ Nixfrost is my personal NixOS + Hyprland dotfiles repository. It features a mode
 ## Features
 
 ### Desktop & Compositor
+
 - <img src="https://img.shields.io/badge/Hyprland-58a6ff?style=flat&logo=wayland" /> **Hyprland** - Modern Wayland compositor
 - <img src="https://img.shields.io/badge/Waybar-89b4fa?style=flat" /> **Waybar** - Highly customizable status bar
 - <img src="https://img.shields.io/badge/SwayNC-f5c2e7?style=flat" /> **SwayNC** - Notification daemon
 - <img src="https://img.shields.io/badge/Hyprlock-cba6f7?style=flat" /> **Hyprlock** - Beautiful lockscreen
 
 ### Terminal & Shell
+
 - <img src="https://img.shields.io/badge/Kitty-ffa657?style=flat&logo=kitty" /> **Kitty** - Fast, GPU-accelerated terminal
 - <img src="https://img.shields.io/badge/Zsh-f5e0dc?style=flat&logo=zsh" /> **Zsh** - Z shell with Oh My Zsh
 - <img src="https://img.shields.io/badge/Starship-a6e3a1?style=flat" /> **Starship** - Minimal, blazing-fast prompt
 
 ### Utilities
+
 - <img src="https://img.shields.io/badge/Delta-bac2de?style=flat&logo=git" /> **Delta** - Syntax-highlighting pager for git
 - <img src="https://img.shields.io/badge/Eza-94e2d5?style=flat" /> **Eza** - Modern ls replacement
 - <img src="https://img.shields.io/badge/Yazi-fab387?style=flat" /> **Yazi** - Blazing fast file manager
@@ -53,20 +56,11 @@ Nixfrost is my personal NixOS + Hyprland dotfiles repository. It features a mode
 - <img src="https://img.shields.io/badge/Zoxide-1e1e2e?logo=bash" /> **Zoxide** - Smarter cd command
 
 ### Applications
+
 - <img src="https://img.shields.io/badge/Thunar-4a90d9?style=flat&logo=xfce" /> **Thunar** - File manager
 - <img src="https://img.shields.io/badge/Neovim-57a143?style=flat&logo=neovim" /> **Neovim** - Hyperextensible Vim editor
 
 ---
-
-## Screenshots
-
-<div align="center">
-
-| Desktop | Lock Screen |
-|---------|-------------|
-| ![Desktop](https://placehold.co/1920x1080/1e1e2e/cdd6frost?text=Desktop+View) | ![Lockscreen](https://placehold.co/1920x1080/1e1e2e/f38ba8?text=Hyprlock) |
-
-</div>
 
 ---
 
@@ -75,7 +69,7 @@ Nixfrost is my personal NixOS + Hyprland dotfiles repository. It features a mode
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/Nixfrost.git ~/Nixfrost
+git clone https://github.com/ijadux2/Nixfrost.git ~/Nixfrost
 cd ~/Nixfrost
 ```
 
@@ -143,33 +137,33 @@ Nixfrost/
 
 ### Main Modifiers
 
-| Key | Description |
-|-----|-------------|
+| Key     | Description                           |
+| ------- | ------------------------------------- |
 | `Super` | Main modifier (Windows key / Command) |
 
 ### Applications
 
-| Keybinding | Action |
-|------------|--------|
-| `Super + Enter` | Open terminal (Kitty) |
-| `Super + E` | Open file manager (Thunar) |
-| `Super + Space` | Open application launcher |
-| `Super + Q` | Close active window |
+| Keybinding      | Action                     |
+| --------------- | -------------------------- |
+| `Super + Enter` | Open terminal (Kitty)      |
+| `Super + E`     | Open file manager (Thunar) |
+| `Super + Space` | Open application launcher  |
+| `Super + Q`     | Close active window        |
 
 ### Window Management
 
-| Keybinding | Action |
-|------------|--------|
-| `Super + F` | Toggle fullscreen |
-| `Super + P` | Toggle pseudotile |
-| `Super + J` | Toggle split |
+| Keybinding      | Action                    |
+| --------------- | ------------------------- |
+| `Super + F`     | Toggle fullscreen         |
+| `Super + P`     | Toggle pseudotile         |
+| `Super + J`     | Toggle split              |
 | `Super + Arrow` | Focus window in direction |
 
 ### Workspaces
 
-| Keybinding | Action |
-|------------|--------|
-| `Super + [1-9]` | Switch to workspace |
+| Keybinding              | Action                   |
+| ----------------------- | ------------------------ |
+| `Super + [1-9]`         | Switch to workspace      |
 | `Super + Shift + [1-9]` | Move window to workspace |
 
 ---
@@ -178,35 +172,35 @@ Nixfrost/
 
 ### Catppuccin Mocha Palette
 
-| Color | Hex | Usage |
-|-------|-----|-------|
+| Color                                                       | Hex       | Usage     |
+| ----------------------------------------------------------- | --------- | --------- |
 | <img src="https://img.shields.io/badge/rosewater-f5e0dc" /> | `#f5e0dc` | Rosewater |
-| <img src="https://img.shields.io/badge/flamingo-f2cdcd" /> | `#f2cdcd` | Flamingo |
-| <img src="https://img.shields.io/badge/pink-f5c2e7" /> | `#f5c2e7` | Pink |
-| <img src="https://img.shields.io/badge/mauve-cba6f7" /> | `#cba6f7` | Mauve |
-| <img src="https://img.shields.io/badge/red-f38ba8" /> | `#f38ba8` | Red |
-| <img src="https://img.shields.io/badge/maroon-eba0ac" /> | `#eba0ac` | Maroon |
-| <img src="https://img.shields.io/badge/peach-fab387" /> | `#fab387` | Peach |
-| <img src="https://img.shields.io/badge/yellow-f9e2af" /> | `#f9e2af` | Yellow |
-| <img src="https://img.shields.io/badge/green-a6e3a1" /> | `#a6e3a1` | Green |
-| <img src="https://img.shields.io/badge/teal-94e2d5" /> | `#94e2d5` | Teal |
-| <img src="https://img.shields.io/badge/sky-89dceb" /> | `#89dceb` | Sky |
-| <img src="https://img.shields.io/badge/sapphire-74c7ec" /> | `#74c7ec` | Sapphire |
-| <img src="https://img.shields.io/badge/blue-89b4fa" /> | `#89b4fa` | Blue |
-| <img src="https://img.shields.io/badge/lavender-b4befe" /> | `#b4befe` | Lavender |
+| <img src="https://img.shields.io/badge/flamingo-f2cdcd" />  | `#f2cdcd` | Flamingo  |
+| <img src="https://img.shields.io/badge/pink-f5c2e7" />      | `#f5c2e7` | Pink      |
+| <img src="https://img.shields.io/badge/mauve-cba6f7" />     | `#cba6f7` | Mauve     |
+| <img src="https://img.shields.io/badge/red-f38ba8" />       | `#f38ba8` | Red       |
+| <img src="https://img.shields.io/badge/maroon-eba0ac" />    | `#eba0ac` | Maroon    |
+| <img src="https://img.shields.io/badge/peach-fab387" />     | `#fab387` | Peach     |
+| <img src="https://img.shields.io/badge/yellow-f9e2af" />    | `#f9e2af` | Yellow    |
+| <img src="https://img.shields.io/badge/green-a6e3a1" />     | `#a6e3a1` | Green     |
+| <img src="https://img.shields.io/badge/teal-94e2d5" />      | `#94e2d5` | Teal      |
+| <img src="https://img.shields.io/badge/sky-89dceb" />       | `#89dceb` | Sky       |
+| <img src="https://img.shields.io/badge/sapphire-74c7ec" />  | `#74c7ec` | Sapphire  |
+| <img src="https://img.shields.io/badge/blue-89b4fa" />      | `#89b4fa` | Blue      |
+| <img src="https://img.shields.io/badge/lavender-b4befe" />  | `#b4befe` | Lavender  |
 
 ### Surface Colors
 
-| Color | Hex | Usage |
-|-------|-----|-------|
-| <img src="https://img.shields.io/badge/text-cdd6f4" /> | `#cdd6f4` | Text |
+| Color                                                      | Hex       | Usage     |
+| ---------------------------------------------------------- | --------- | --------- |
+| <img src="https://img.shields.io/badge/text-cdd6f4" />     | `#cdd6f4` | Text      |
 | <img src="https://img.shields.io/badge/subtext1-bac2de" /> | `#bac2de` | Subtext 1 |
 | <img src="https://img.shields.io/badge/subtext0-a6adc8" /> | `#a6adc8` | Subtext 0 |
 | <img src="https://img.shields.io/badge/overlay0-6c7086" /> | `#6c7086` | Overlay 0 |
 | <img src="https://img.shields.io/badge/surface0-313244" /> | `#313244` | Surface 0 |
-| <img src="https://img.shields.io/badge/base-1e1e2e" /> | `#1e1e2e` | Base |
-| <img src="https://img.shields.io/badge/mantle-181825" /> | `#181825` | Mantle |
-| <img src="https://img.shields.io/badge/crust-11111b" /> | `#11111b` | Crust |
+| <img src="https://img.shields.io/badge/base-1e1e2e" />     | `#1e1e2e` | Base      |
+| <img src="https://img.shields.io/badge/mantle-181825" />   | `#181825` | Mantle    |
+| <img src="https://img.shields.io/badge/crust-11111b" />    | `#11111b` | Crust     |
 
 ---
 
