@@ -106,7 +106,7 @@ in
       open = "xdg-open";
       fa = "fastfetch";
       th = "thunar";
-      gp = "git push";
+      gp = "git push -u origin main";
     };
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
