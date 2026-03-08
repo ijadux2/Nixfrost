@@ -86,7 +86,6 @@ in
     shellAliases = {
       ll = "ls -l";
       update = "home-manager switch";
-      rebuild = "sudo nixos-rebuild switch --flake /home/jadu/codespace/Nixfrost/#itachi";
       clean = "sudo nix-collect-garbage -d";
       v = "nvim";
       x = "clear";

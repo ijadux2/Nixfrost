@@ -54,5 +54,16 @@
       '';
     })
 
+    (pkgs.writeShellApplication {
+      name = "rebuild";
+      runtimeInputs = [ ];
+      text = ''
+        echo "building your nixos config .. "
+        nixos="/home/jadu/codespace/Nixfrost/"
+        cd "$nixos"
+        sudo nixos-rebuild --flake .#itachi
+        echo "build complete !!"
+      '';
+    })
   ];
 }
