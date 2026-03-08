@@ -59,9 +59,7 @@
       runtimeInputs = [ ];
       text = ''
         echo "building your nixos config .. "
-        nixos="/home/jadu/codespace/Nixfrost/"
-        cd "$nixos"
-        sudo nixos-rebuild --flake .#itachi
+        sudo nixos-rebuild switch --flake /home/jadu/codespace/Nixfrost/#itachi
         echo "build complete !!"
       '';
     })
