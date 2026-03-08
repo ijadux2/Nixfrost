@@ -18,8 +18,8 @@ in
   imports = [
     ./jadu-pkgs.nix
     ./kitty/kitty.nix
-    # ./hyprland/hypr.nix
-  ];
+  ]
+  ++ (if builtins.pathExists ./home/ssh.nix then [ ./home/ssh.nix ] else [ ]);
 
   home.username = "jadu";
   home.homeDirectory = "/home/jadu";

@@ -37,5 +37,22 @@
         hyprlock
       '';
     })
+
+    (pkgs.writeShellApplication {
+      name = "nixi";
+      runtimeInputs = with pkgs; [ git ];
+      text = ''
+        nixos="/home/jadu/codespace/Nixfrost/"
+        cd "$nixos" || exit 1
+        echo "adding files and commiting .."
+        git add .
+        read -rp "Commit msg for Nixos-config >> " msg 
+        git commit -m "$msg"
+        echo "pushing to github .."
+        git push -u origin main
+        echo "pushed ..."
+      '';
+    })
+
   ];
 }
