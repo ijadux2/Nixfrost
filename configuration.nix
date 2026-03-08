@@ -16,6 +16,11 @@
   boot.loader.efi.canTouchEfiVariables = true;
   networking.hostName = "itachi"; # Define your hostname.
 
+  nix.settings.trusted-users = [
+    "root"
+    "jadu"
+  ];
+
   users.users.jadu = {
     isNormalUser = true;
     shell = pkgs.zsh;

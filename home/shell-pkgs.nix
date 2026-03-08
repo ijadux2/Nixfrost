@@ -58,11 +58,10 @@
       name = "rebuild";
       runtimeInputs = [
         pkgs.nixos-rebuild
-        pkgs.sudo
       ];
       text = ''
         echo "building your nixos config .. "
-        sudo nixos-rebuild switch --flake /home/jadu/codespace/Nixfrost/#itachi
+        /run/wrappers/bin/sudo  nixos-rebuild switch --flake /home/jadu/codespace/Nixfrost/#itachi
         echo "build complete !!"
       '';
     })
