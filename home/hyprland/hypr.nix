@@ -1,0 +1,165 @@
+{ pkgs, ... }:
+
+{
+  wayland.windowManager.hyprland = {
+    enable = true;
+
+    # Optional: If you want to keep using your external .conf files alongside Nix:
+    extraConfig = ''
+      source = ../dotfiles/hypr/mocha.conf
+    '';
+
+    settings = {
+
+      exec-once = [
+        "waybar"
+        "swww-daemon"
+        "swww img /home/jadu/Pictures/wallpapers/cat_leaves.png --transition-type fade --transition-fps 60"
+        "swaync"
+        "wl-paste --type text --watch cliphist store"
+        "wl-paste --type image --watch cliphist store"
+        "hyprctl setcursor TAR-21 22"
+      ];
+
+      # --- Variables ---
+      "$mainMod" = "SUPER";
+      "$terminal" = "kitty";
+      "$fileManager" = "thunar";
+
+      monitor = ",preferred,auto,1";
+
+      env = [
+        "XCURSOR_SIZE,24"
+        "HYPRCURSOR_SIZE,24"
+      ];
+
+      # --- Look and Feel ---
+      general = {
+        gaps_in = 5;
+        gaps_out = 10;
+        border_size = 0;
+        layout = "dwindle";
+      };
+
+      decoration = {
+        rounding = 10;
+        active_opacity = 0.9;
+        inactive_opacity = 0.85;
+        shadow = {
+          enabled = true;
+          range = 4;
+          render_power = 3;
+        };
+        blur = {
+          enabled = true;
+          size = 5;
+          passes = 4;
+          vibrancy = 0.1696;
+        };
+      };
+
+      animations = {
+        enabled = true;
+        bezier = [
+          "easeOutQuint, 0.23, 1, 0.32, 1"
+          "easeInOutCubic, 0.65, 0.05, 0.36, 1"
+          "linear, 0, 0, 1, 1"
+          "almostLinear, 0.5, 0.5, 0.75, 1"
+          "quick, 0.15, 0, 0.1, 1"
+        ];
+        animation = [
+          "global, 1, 10, default"
+          "border, 1, 5.39, easeOutQuint"
+          "windows, 1, 4.79, easeOutQuint"
+          "windowsIn, 1, 4.1, easeOutQuint, popin 87%"
+          "windowsOut, 1, 1.49, linear, popin 87%"
+          "fadeIn, 1, 1.73, almostLinear"
+          "fadeOut, 1, 1.46, almostLinear"
+          "fade, 1, 3.03, quick"
+          "layers, 1, 3.81, easeOutQuint"
+          "layersIn, 1, 4, easeOutQuint, fade"
+          "layersOut, 1, 1.5, linear, fade"
+          "fadeLayersIn, 1, 1.79, almostLinear"
+          "fadeLayersOut, 1, 1.39, almostLinear"
+          "workspaces, 1, 1.94, almostLinear, fade"
+          "workspacesIn, 1, 1.21, almostLinear, fade"
+          "workspacesOut, 1, 1.94, almostLinear, fade"
+          "zoomFactor, 1, 7, quick"
+        ];
+      };
+
+      # --- Input & Gestures ---
+      input = {
+        kb_layout = "us";
+        follow_mouse = 1;
+        sensitivity = 0;
+        touchpad.natural_scroll = false;
+      };
+
+      gestures = {
+        workspace_swipe = true; # Enabled based on your 3-finger gesture intent
+      };
+
+      # --- Keybindings ---
+      bind = [
+        "$mainMod, RETURN, exec, $terminal"
+        "$mainMod, C, exec, $terminal nvim"
+        "$mainMod, Q, killactive"
+        "$mainMod, E, exec, $fileManager"
+        "$mainMod, SPACE, togglefloating"
+        "$mainMod, L, exec, lock"
+        "$mainMod SHIFT, N, exec, swaync-client -t -rs"
+        "$mainMod, B, exec, chromium"
+        "$mainMod, TAB, workspace, previous"
+        "$mainMod, T, exec, blueman-manager"
+
+        # Scripts
+        "$mainMod, D, exec, ~/.config/sway/scripts/dmenu-launcher.sh"
+        "$mainMod, W, exec, ~/.config/sway/scripts/wallpaper-selector.sh"
+        "$mainMod, V, exec, ~/.config/sway/scripts/dmenu-clipboard.sh"
+        "$mainMod, F, exec, ~/.config/sway/scripts/screenshot.sh"
+        "$mainMod, P, exec, ~/.config/sway/scripts/dmenu-power.sh"
+
+        # Focus & Workspaces
+        "$mainMod, left, movefocus, l"
+        "$mainMod, right, movefocus, r"
+        "$mainMod, up, movefocus, u"
+        "$mainMod, down, movefocus, d"
+      ]
+      ++ (
+        # Generate bindings for workspaces 1-10
+        builtins.concatLists (
+          builtins.genList (
+            i:
+            let
+              ws = i + 1;
+            in
+            [
+              "$mainMod, ${toString (if ws == 10 then 0 else ws)}, workspace, ${toString ws}"
+              "$mainMod SHIFT, ${toString (if ws == 10 then 0 else ws)}, movetoworkspace, ${toString ws}"
+            ]
+          ) 10
+        )
+      );
+
+      bindm = [
+        "$mainMod, mouse:272, movewindow"
+        "$mainMod, mouse:273, resizewindow"
+      ];
+
+      # Multimedia keys
+      bindel = [
+        ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+        ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+      ];
+
+      # Window Rules
+      windowrulev2 = [
+        "suppressmaximize, class:.*"
+        "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+        "float,class:(hyprland-run)"
+        "move 20 monitor_h-120,class:(hyprland-run)"
+      ];
+    };
+  };
+}

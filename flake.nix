@@ -1,0 +1,54 @@
+{
+  description = "NixOS with Home Manager";
+
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+    kitty-fonts = {
+      url = "path:./fonts/JetBrainsMonoNerdFont-Regular.ttf";
+      flake = false;
+    };
+
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+  };
+
+  outputs =
+    inputs@{
+      nixpkgs,
+      home-manager,
+      kitty-fonts,
+      ...
+    }:
+    let
+      system = "x86_64-linux";
+    in
+    {
+      nixosConfigurations.itachi = nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = { inherit inputs; };
+
+        modules = [
+          ./configuration.nix
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.users.jadu =
+              { inputs, pkgs, ... }:
+              {
+                imports = [
+                  ./home/jadu.nix
+                ];
+              };
+            home-manager.backupFileExtension = "backup";
+          }
+        ];
+      };
+    };
+}

@@ -1,0 +1,61 @@
+{ pkgs, ... }:
+
+{
+  environment.systemPackages = with pkgs; [
+    gnome-keyring
+    foot
+    ffmpeg_7-full
+    hugo
+    luajitPackages.luarocks-nix
+    lua53Packages.luarocks
+    zig
+    vim
+    xdg-utils
+    wget
+    neovim
+    brave
+    chromium
+    kitty
+    waybar
+    swww
+    git
+    curl
+    love
+    zsh
+    nushell
+    yazi
+    opencode
+    cliphist
+    fuzzel
+    grim
+    wl-clipboard
+    slurp
+    hyprlock
+    xdg-desktop-portal-hyprland
+    mesa
+    libgcc
+    fontconfig
+    hyprpolkitagent
+    cmake
+    meson
+    ninja
+    pkg-config
+    hyprutils
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.symbols-only
+    nwg-look
+    coreutils-full
+    progress
+    binutils
+    libgcc
+    libtool
+    blueman
+    bluez
+    pulseaudio
+    nodejs_24
+    nodePackages.npm
+    watchman
+    luajit
+    xdotool
+  ];
+}
