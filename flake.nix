@@ -1,5 +1,5 @@
 {
-  description = "NixOS with Home Manager";
+  description = "Nixfrost: Nixos config";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -19,6 +19,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixvim = {
+    url = "github:nix-community/nixvim";
+  };
+
   };
 
   outputs =
@@ -27,6 +31,7 @@
       stylix,
       home-manager,
       kitty-fonts,
+      nixvim,
       ...
     }:
     let
@@ -40,6 +45,7 @@
         modules = [
           ./configuration.nix
           stylix.nixosModules.stylix
+	  nixvim.nixosModules.nixvim
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
