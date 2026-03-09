@@ -58,6 +58,22 @@
 
   };
 
+  system.autoUpgrade = {
+    enable = true;
+    flake = "/home/jadu/codespace/Nixfrost/"; # Path to your flake directory
+    flags = [
+      "--update-input"
+      "nixpkgs"
+      "--commit-lock-file" # Optional: automatically commits the new lock file if it's a git repo
+    ];
+    dates = "02:00";
+  };
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+  };
+
   services = {
     gvfs.enable = true;
     tumbler.enable = true;
@@ -69,7 +85,6 @@
     upower.enable = true;
   };
 
-  # Enable networking for Noctalia
   networking.networkmanager.enable = true;
 
 }
