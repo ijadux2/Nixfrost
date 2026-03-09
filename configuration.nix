@@ -15,8 +15,11 @@
     if builtins.pathExists ./hardware-configuration.nix then [ ./hardware-configuration.nix ] else [ ]
   );
   boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.configurationLimit = 5;
   boot.loader.efi.canTouchEfiVariables = true;
-  networking.hostName = "itachi"; # Define your hostname.
+  networking.hostName = "itachi";
+
+  nix.settings.auto-optimise-store = true;
 
   nix.settings.trusted-users = [
     "root"
@@ -29,6 +32,7 @@
     description = "jadu";
     extraGroups = [
       "networkmanager"
+      "sudo"
       "wheel"
     ];
   };
