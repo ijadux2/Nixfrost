@@ -10,8 +10,8 @@ in
 
     # Fonts
     font = {
-      name = "JetBrainsMono Nerd Font";
-      size = 14;
+      name = "Iosevka Nerd Font";
+      size = 16;
     };
 
     # Theme - Using the built-in Catppuccin-Mocha support in Home Manager

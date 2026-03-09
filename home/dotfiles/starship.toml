@@ -22,7 +22,7 @@ format = "[$path]($style)[$read_only]($read_only_style) "
 
 # λ ❯
 [character]
-success_symbol = '[❯](bold fg:lavender)'
+success_symbol = '[λ](bold fg:lavender)'
 error_symbol = '[❯](bold fg:red)'
 
 [git_branch]

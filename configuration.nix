@@ -32,7 +32,6 @@
     description = "jadu";
     extraGroups = [
       "networkmanager"
-      "sudo"
       "wheel"
     ];
   };

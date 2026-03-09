@@ -3,7 +3,7 @@
   # This set can be imported and spread into programs.kitty.settings
 
   settings = {
-    # Basic Colors
+   # Basic Colors
     foreground = "#cdd6f4";
     background = "#181425";
     selection_foreground = "#181425";
