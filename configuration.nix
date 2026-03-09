@@ -11,7 +11,6 @@
     ./home/services.nix
     ./home/time.nix
     ./home/stylix/stylix.nix
-    ./home/nixvim/nixvim.nix
   ]
   ++ (
     if builtins.pathExists ./hardware-configuration.nix then [ ./hardware-configuration.nix ] else [ ]

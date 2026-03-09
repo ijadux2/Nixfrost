@@ -19,10 +19,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixvim = {
-    url = "github:nix-community/nixvim";
-  };
-
   };
 
   outputs =
@@ -31,7 +27,6 @@
       stylix,
       home-manager,
       kitty-fonts,
-      nixvim,
       ...
     }:
     let
@@ -45,7 +40,6 @@
         modules = [
           ./configuration.nix
           stylix.nixosModules.stylix
-	  nixvim.nixosModules.nixvim
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     gnome-keyring
+    neovim
     foot
     ffmpeg_7-full
     hugo
@@ -12,7 +13,6 @@
     vim
     xdg-utils
     wget
-    neovim
     brave
     chromium
     kitty
