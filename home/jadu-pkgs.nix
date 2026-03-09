@@ -3,6 +3,7 @@
 
   home.packages = with pkgs; [
     apple-cursor
+    git-crypt
     bibata-cursors
     feh
     whatsapp-electron

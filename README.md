@@ -22,6 +22,11 @@ git clone https://github.com/ijadux2/Nixfrost.git ~/Nixfrost
 cd ~/Nixfrost
 ```
 
+> [!WARNING]
+> this Nixos config is locked by git-crypt so
+> remove the [[./hardware-configuration.nix]] and [[./home/ssh.nix]] configuration
+> and adjust for your device.
+
 - applying system config :
 
 ```bash
