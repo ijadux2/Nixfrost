@@ -13,7 +13,6 @@
     vim
     xdg-utils
     wget
-    brave
     chromium
     kitty
     waybar
@@ -22,10 +21,8 @@
     curl
     love
     zsh
-    nushell
     yazi
     opencode
-    cliphist
     fuzzel
     grim
     wl-clipboard
@@ -45,8 +42,6 @@
     nerd-fonts.symbols-only
     nwg-look
     coreutils-full
-    progress
-    binutils
     libgcc
     libtool
     blueman
@@ -54,7 +49,6 @@
     pulseaudio
     nodejs_24
     nodePackages.npm
-    watchman
     luajit
     xdotool
   ];

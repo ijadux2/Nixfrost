@@ -5,11 +5,9 @@
     apple-cursor
     git-crypt
     bibata-cursors
-    feh
     whatsapp-electron
     telegram-desktop
     vesktop
-    zls
     go
     brightnessctl
     tty-clock
@@ -19,7 +17,6 @@
     python313Packages.pyqt5
     python313Packages.pip
     fzf
-    dunst
     libblake3
     pipes-rs
     git
@@ -79,8 +76,6 @@
     cargo
     yt-dlp
     mpv-handler
-    rofi
-    picom
     cliphist
   ];
 
