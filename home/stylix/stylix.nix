@@ -21,4 +21,9 @@
     base0E = "cba6f7"; # mauve
     base0F = "f2cdcd"; # flamingo
   };
+
+  stylix.targets = {
+    btop.enable = true;
+  };
+
 }
