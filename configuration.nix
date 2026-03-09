@@ -18,7 +18,6 @@
   boot.loader.systemd-boot.configurationLimit = 5;
   boot.loader.efi.canTouchEfiVariables = true;
   networking.hostName = "itachi";
-
   nix.settings.auto-optimise-store = true;
 
   nix.settings.trusted-users = [
@@ -35,6 +34,7 @@
       "wheel"
     ];
   };
+  security.sudo.extraConfig = "Defaults pwfeedback";
   nixpkgs.config.allowUnfree = true;
 
   programs.nix-ld.libraries = with pkgs; [

@@ -89,6 +89,7 @@ in
       update = "home-manager switch";
       clean = "sudo nix-collect-garbage -d";
       v = "nvim";
+      bt = "btop --force-utf";
       x = "clear";
       q = "exit";
       y = "yazi";
