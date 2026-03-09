@@ -85,6 +85,7 @@ in
     };
     shellAliases = {
       ll = "ls -l";
+      cm = "cmatrix";
       update = "home-manager switch";
       clean = "sudo nix-collect-garbage -d";
       v = "nvim";
@@ -143,11 +144,6 @@ in
       gp = "git push";
     };
     initExtra = ''
-      # Any extra bash commands go here
-      export PATH=$PATH:$HOME/.local/bin
-      if [ -f ~/.bash_secrets ]; then
-          . ~/.bash_secrets
-      fi
       eval "$(zoxide init bash)"
     '';
   };

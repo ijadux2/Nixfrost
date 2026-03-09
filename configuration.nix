@@ -10,8 +10,10 @@
     ./home/shell-pkgs.nix
     ./home/services.nix
     ./home/time.nix
-  ];
-
+  ]
+  ++ (
+    if builtins.pathExists ./hardware-configuration.nix then [ ./hardware-configuration.nix ] else [ ]
+  );
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   networking.hostName = "itachi"; # Define your hostname.
