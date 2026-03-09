@@ -40,7 +40,6 @@
         modules = [
           ./configuration.nix
           stylix.nixosModules.stylix
-
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

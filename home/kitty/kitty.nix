@@ -34,7 +34,7 @@ in
       confirm_os_window_close = 0;
       window_margin_width = 6;
       draw_minimal_borders = "no";
-      background_opacity = "0.85";
+      background_opacity = "0.9";
       dynamic_background_opacity = "yes";
       repaint_delay = 10;
       input_delay = 3;

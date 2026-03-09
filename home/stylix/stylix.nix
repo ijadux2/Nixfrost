@@ -1,9 +1,9 @@
 {
   ...
 }:
-
 {
-  config.lib.stylix.colors = {
+  # Use base16Scheme instead of config.lib
+  stylix.base16Scheme = {
     base00 = "1e1e2e"; # base
     base01 = "181825"; # mantle
     base02 = "313244"; # surface0
@@ -21,9 +21,4 @@
     base0E = "cba6f7"; # mauve
     base0F = "f2cdcd"; # flamingo
   };
-
-  stylix.targets = {
-    btop.enable = true;
-  };
-
 }
