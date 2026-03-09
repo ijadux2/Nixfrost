@@ -24,7 +24,8 @@ cd ~/Nixfrost
 
 > [!WARNING]
 > this Nixos config is locked by git-crypt so
-> remove the [[./hardware-configuration.nix]] and [[./home/ssh.nix]] configuration
+> remove the [Hardware-configuraton.nix](./hardware-configuration.nix) and
+> [Ssh.nix](./home/ssh.nix) configuration
 > and adjust for your device.
 
 - applying system config :
