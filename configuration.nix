@@ -10,6 +10,7 @@
     ./home/shell-pkgs.nix
     ./home/services.nix
     ./home/time.nix
+    ./home/stylix/stylix.nix
   ]
   ++ (
     if builtins.pathExists ./hardware-configuration.nix then [ ./hardware-configuration.nix ] else [ ]

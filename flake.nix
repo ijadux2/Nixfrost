@@ -9,6 +9,11 @@
       flake = false;
     };
 
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,6 +24,7 @@
   outputs =
     inputs@{
       nixpkgs,
+      stylix,
       home-manager,
       kitty-fonts,
       ...
@@ -33,6 +39,7 @@
 
         modules = [
           ./configuration.nix
+          stylix.nixosModules.stylix
 
           home-manager.nixosModules.home-manager
           {
