@@ -10,6 +10,7 @@
     ./home/modules/services.nix
     ./home/pkgs/pkgs.nix
     ./home/pkgs/shell-pkgs.nix
+    ./home/virtual/virtual.nix
   ]
   ++ (
     if builtins.pathExists ./hardware-configuration.nix then [ ./hardware-configuration.nix ] else [ ]
@@ -31,6 +32,8 @@
     description = "jadu";
     extraGroups = [
       "networkmanager"
+      "libvirtd"
+      "kvm"
       "wheel"
     ];
   };

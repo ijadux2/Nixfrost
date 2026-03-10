@@ -2,6 +2,7 @@
 {
 
   home.packages = with pkgs; [
+    gnome-boxes
     apple-cursor
     direnv
     git-crypt
