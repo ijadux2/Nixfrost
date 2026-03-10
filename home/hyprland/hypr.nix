@@ -1,5 +1,9 @@
 { ... }:
 
+let
+  theme = import ../waybar/mocha.nix;
+in
+
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -7,7 +11,7 @@
     # 1. FIX: Use an absolute path or a Nix-path relative to this file.
     # If mocha.conf is in the same folder as this nix file, use ./mocha.conf
     extraConfig = ''
-      source = ~/codespace/Nixfrost/home/dotfiles/hypr/mocha.conf
+      ${builtins.readFile ./mocha.conf}
     '';
 
     settings = {
@@ -112,7 +116,7 @@
         # Scripts (Using absolute paths is safer in Nix unless you use builtins.path)
         "$mainMod, D, exec, fuzzel-launcher"
         "$mainMod, W, exec, wallpaper-selector "
-        "$mainMod, V, exec, fuzzel-clipboar"
+        "$mainMod, V, exec, fuzzel-clipboard"
         "$mainMod, F, exec, screen-shot"
         "$mainMod, P, exec, fuzzel-power"
 

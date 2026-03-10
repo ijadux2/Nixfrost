@@ -4,7 +4,7 @@ let
   # --- Appearance Variables ---
   # Sharing these makes it easy to update your theme in one place
   fuzzelAppearance = ''
-    --font="JetBrains Mono:size=10" \
+    --font="JetBrains Mono:size=12" \
     --background-color=1e1e2eff \
     --text-color=cdd6f4ff \
     --selection-color=cba6f7ff \
