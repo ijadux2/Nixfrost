@@ -2,14 +2,6 @@
   ...
 }:
 
-let
-  dotfiles = [
-    "sway"
-    "swaync"
-    "foot"
-  ];
-in
-
 {
   # home-manager modules and files
   imports = [
@@ -18,6 +10,10 @@ in
     ./starship.nix
     ./hyprland/hypr.nix
     ./waybar/config.nix
+    ./sway/config.nix
+    ./sway/scripts.nix
+    ./foot/foot.nix
+    ./swaync/config.nix
   ]
   ++ (if builtins.pathExists ./home/ssh.nix then [ ./home/ssh.nix ] else [ ]);
 
@@ -32,14 +28,14 @@ in
 
   programs.home-manager.enable = true;
 
-  home.file = builtins.listToAttrs (
-    map (name: {
-      name = ".config/${name}";
-      value = {
-        source = ./dotfiles/${name};
-      };
-    }) dotfiles
-  );
+  #  home.file = builtins.listToAttrs (
+  #    map (name: {
+  #      name = ".config/${name}";
+  #      value = {
+  #        source = ./dotfiles/${name};
+  #      };
+  #    }) dotfiles
+  #  );
 
   programs.git = {
     enable = true;

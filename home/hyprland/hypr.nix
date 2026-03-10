@@ -110,11 +110,11 @@
         "$mainMod, T, exec, blueman-manager"
 
         # Scripts (Using absolute paths is safer in Nix unless you use builtins.path)
-        "$mainMod, D, exec, ~/.config/sway/scripts/dmenu-launcher.sh"
-        "$mainMod, W, exec, ~/.config/sway/scripts/wallpaper-selector.sh"
-        "$mainMod, V, exec, ~/.config/sway/scripts/dmenu-clipboard.sh"
-        "$mainMod, F, exec, ~/.config/sway/scripts/screenshot.sh"
-        "$mainMod, P, exec, ~/.config/sway/scripts/dmenu-power.sh"
+        "$mainMod, D, exec, fuzzel-launcher"
+        "$mainMod, W, exec, wallpaper-selector "
+        "$mainMod, V, exec, fuzzel-clipboar"
+        "$mainMod, F, exec, screen-shot"
+        "$mainMod, P, exec, fuzzel-power"
 
         "$mainMod, left, movefocus, l"
         "$mainMod, right, movefocus, r"
