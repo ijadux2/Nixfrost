@@ -17,7 +17,7 @@
     ./shell/zsh.nix
     ./shell/bash.nix
   ]
-  ++ (if builtins.pathExists ./home/modules/ssh.nix then [ ./home/modules/ssh.nix ] else [ ]);
+  ++ (if builtins.pathExists ./modules/ssh.nix then [ ./modules/ssh.nix ] else [ ]);
 
   home.username = "jadu";
   home.homeDirectory = "/home/jadu";

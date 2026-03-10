@@ -6,7 +6,6 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./home/modules/ssh.nix
     ./home/modules/time.nix
     ./home/modules/services.nix
     ./home/pkgs/pkgs.nix
