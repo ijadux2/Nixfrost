@@ -5,15 +5,15 @@
 {
   # home-manager modules and files
   imports = [
-    ./jadu-pkgs.nix
     ./kitty/kitty.nix
-    ./starship.nix
     ./hyprland/hypr.nix
     ./waybar/config.nix
     ./sway/config.nix
     ./sway/scripts.nix
     ./foot/foot.nix
     ./swaync/config.nix
+    ./starship/starship.nix
+    ./pkgs/jadu-pkgs.nix
   ]
   ++ (if builtins.pathExists ./home/ssh.nix then [ ./home/ssh.nix ] else [ ]);
 

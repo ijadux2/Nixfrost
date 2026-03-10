@@ -6,11 +6,11 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./home/pkgs.nix
-    ./home/shell-pkgs.nix
-    ./home/services.nix
-    ./home/time.nix
-    ./home/stylix/stylix.nix
+    ./home/modules/ssh.nix
+    ./home/modules/time.nix
+    ./home/modules/services.nix
+    ./home/pkgs/pkgs.nix
+    ./home/pkgs/shell-pkgs.nix
   ]
   ++ (
     if builtins.pathExists ./hardware-configuration.nix then [ ./hardware-configuration.nix ] else [ ]
