@@ -7,7 +7,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: cachix/install-nix-action@v25
       - name: Build ISO
-        run: nix build .#nixosConfigurations.customISO.config.system.build.isoImage
+        run: nix build .#nixosConfigurations.customISO.config.system.build.isoImage --extra-experimental-features "nix-command flakes" --no-write-lock-file
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
