@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 
 let
   # Import the colors we just defined

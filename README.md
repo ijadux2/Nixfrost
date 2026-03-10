@@ -15,10 +15,11 @@ my nixos config for coding and daily usage.
 
 - cloning :
 
-```bash
+``bash
 git clone https://github.com/ijadux2/Nixfrost.git ~/Nixfrost
 cd ~/Nixfrost
-```
+
+````
 
 > [!WARNING]
 > this Nixos config is locked by git-crypt so
@@ -30,7 +31,7 @@ cd ~/Nixfrost
 
 ```bash
 sudo nixos-rebuild switch --flake .#itachi
-```
+````
 
 ## Keybinds
 

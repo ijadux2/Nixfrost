@@ -4,7 +4,6 @@
 
 let
   dotfiles = [
-    "waybar"
     "sway"
     "swaync"
     "foot"
@@ -18,6 +17,7 @@ in
     ./kitty/kitty.nix
     ./starship.nix
     ./hyprland/hypr.nix
+    ./waybar/config.nix
   ]
   ++ (if builtins.pathExists ./home/ssh.nix then [ ./home/ssh.nix ] else [ ]);
 
