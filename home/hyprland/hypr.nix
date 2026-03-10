@@ -1,16 +1,17 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   wayland.windowManager.hyprland = {
     enable = true;
 
-    # Optional: If you want to keep using your external .conf files alongside Nix:
+    # 1. FIX: Use an absolute path or a Nix-path relative to this file.
+    # If mocha.conf is in the same folder as this nix file, use ./mocha.conf
     extraConfig = ''
-      source = ../dotfiles/hypr/mocha.conf
+      source = ~/codespace/Nixfrost/home/dotfiles/hypr/mocha.conf
     '';
 
     settings = {
-
+      # --- Initialization ---
       exec-once = [
         "waybar"
         "swww-daemon"
@@ -88,16 +89,11 @@
         ];
       };
 
-      # --- Input & Gestures ---
       input = {
         kb_layout = "us";
         follow_mouse = 1;
         sensitivity = 0;
         touchpad.natural_scroll = false;
-      };
-
-      gestures = {
-        workspace_swipe = true; # Enabled based on your 3-finger gesture intent
       };
 
       # --- Keybindings ---
@@ -113,53 +109,43 @@
         "$mainMod, TAB, workspace, previous"
         "$mainMod, T, exec, blueman-manager"
 
-        # Scripts
+        # Scripts (Using absolute paths is safer in Nix unless you use builtins.path)
         "$mainMod, D, exec, ~/.config/sway/scripts/dmenu-launcher.sh"
         "$mainMod, W, exec, ~/.config/sway/scripts/wallpaper-selector.sh"
         "$mainMod, V, exec, ~/.config/sway/scripts/dmenu-clipboard.sh"
         "$mainMod, F, exec, ~/.config/sway/scripts/screenshot.sh"
         "$mainMod, P, exec, ~/.config/sway/scripts/dmenu-power.sh"
 
-        # Focus & Workspaces
         "$mainMod, left, movefocus, l"
         "$mainMod, right, movefocus, r"
         "$mainMod, up, movefocus, u"
         "$mainMod, down, movefocus, d"
       ]
-      ++ (
-        # Generate bindings for workspaces 1-10
-        builtins.concatLists (
-          builtins.genList (
-            i:
-            let
-              ws = i + 1;
-            in
-            [
-              "$mainMod, ${toString (if ws == 10 then 0 else ws)}, workspace, ${toString ws}"
-              "$mainMod SHIFT, ${toString (if ws == 10 then 0 else ws)}, movetoworkspace, ${toString ws}"
-            ]
-          ) 10
-        )
-      );
+      ++ (builtins.concatLists (
+        builtins.genList (
+          i:
+          let
+            ws = i + 1;
+            key = if ws == 10 then "0" else toString ws;
+          in
+          [
+            "$mainMod, ${key}, workspace, ${toString ws}"
+            "$mainMod SHIFT, ${key}, movetoworkspace, ${toString ws}"
+          ]
+        ) 10
+      ));
 
       bindm = [
         "$mainMod, mouse:272, movewindow"
         "$mainMod, mouse:273, resizewindow"
       ];
 
-      # Multimedia keys
+      # 2. FIX: bindel (locked and repeat) for volume keys
       bindel = [
         ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
         ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
       ];
 
-      # Window Rules
-      windowrulev2 = [
-        "suppressmaximize, class:.*"
-        "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
-        "float,class:(hyprland-run)"
-        "move 20 monitor_h-120,class:(hyprland-run)"
-      ];
     };
   };
 }
