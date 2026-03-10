@@ -8,7 +8,6 @@ let
     "hypr"
     "sway"
     "swaync"
-    "starship.toml"
     "foot"
   ];
 in
@@ -18,6 +17,7 @@ in
   imports = [
     ./jadu-pkgs.nix
     ./kitty/kitty.nix
+    ./starship.nix
   ]
   ++ (if builtins.pathExists ./home/ssh.nix then [ ./home/ssh.nix ] else [ ]);
 

@@ -1,7 +1,5 @@
 # Nixfrost
 
----
-
 my nixos config for coding and daily usage.
 
 ## Utility used

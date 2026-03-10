@@ -3,6 +3,7 @@
 
   home.packages = with pkgs; [
     apple-cursor
+    direnv
     git-crypt
     bibata-cursors
     whatsapp-electron
