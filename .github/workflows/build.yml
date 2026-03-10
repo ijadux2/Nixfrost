@@ -1,0 +1,15 @@
+name: "Build ISO"
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v25
+      - name: Build ISO
+        run: nix build .#nixosConfigurations.customISO.config.system.build.isoImage
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: nixos-iso
+          path: result/iso/*.iso
