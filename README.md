@@ -15,23 +15,22 @@ my nixos config for coding and daily usage.
 
 - cloning :
 
-``bash
+```bash
 git clone https://github.com/ijadux2/Nixfrost.git ~/Nixfrost
 cd ~/Nixfrost
-
-````
+```
 
 > [!WARNING]
 > this Nixos config is locked by git-crypt so
 > remove the [Hardware-configuraton.nix](./hardware-configuration.nix) and
-> [Ssh.nix](./home/ssh.nix) configuration
+> [Ssh.nix](./home/modules/ssh.nix) configuration
 > and adjust for your device.
 
 - applying system config :
 
 ```bash
 sudo nixos-rebuild switch --flake .#itachi
-````
+```
 
 ## Keybinds
 

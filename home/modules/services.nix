@@ -35,6 +35,7 @@
     hyprland.enable = true;
     nix-ld.enable = true;
     thunar.enable = true;
+    ssh.enable = true;
   };
 
   fonts.packages = with pkgs; [
