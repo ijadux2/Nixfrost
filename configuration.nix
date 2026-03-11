@@ -9,7 +9,7 @@
     ./home/modules/time.nix
     ./home/modules/services.nix
     ./home/pkgs/pkgs.nix
-    ./home/pkgs/shell-pkgs.nix
+    ./home/pkgs/shell.nix
     ./home/virtual/virtual.nix
   ]
   ++ (

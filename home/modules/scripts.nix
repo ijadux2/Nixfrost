@@ -4,10 +4,9 @@
 }:
 
 {
-  environment.systemPackages = with pkgs; [
-    # hugo
+  home.packages = with pkgs; [
     (pkgs.writeShellApplication {
-      name = "hud"; # The command you'll type in the terminal
+      name = "hud";
       runtimeInputs = with pkgs; [
         git
         hugo
@@ -27,7 +26,6 @@
       '';
     })
 
-    ## lock
     (pkgs.writeShellApplication {
       name = "lock";
       runtimeInputs = with pkgs; [

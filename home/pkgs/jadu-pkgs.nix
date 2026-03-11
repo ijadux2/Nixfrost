@@ -2,83 +2,52 @@
 {
 
   home.packages = with pkgs; [
-    gnome-boxes
-    apple-cursor
-    direnv
-    git-crypt
-    bibata-cursors
-    whatsapp-electron
+    # Communication
     telegram-desktop
     vesktop
-    go
-    brightnessctl
-    tty-clock
-    nautilus
-    glibc
-    python313
-    python313Packages.pyqt5
-    python313Packages.pip
-    fzf
-    libblake3
-    pipes-rs
+    whatsapp-electron
+    gnome-boxes
+
+    # CLI Tools
     git
     curl
-    xz
-    zip
-    unzip
-    clang
-    cmake
-    ninja
-    pkg-config
-    libGL
-    libX11
-    libXcursor
-    libXrandr
-    libXinerama
-    libXi
-    libXcomposite
-    libXdamage
-    libXfixes
-    libXext
-    libXrender
-    libXtst
-    bc
-    imagemagick
-    glib
-    freetype
-    fontconfig
-    dbus
-    starship
-    lua
-    zoxide
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-    eza
+    wget
+    fzf
     ripgrep
-    nodejs
-    nix-ld
+    eza
+    bat
+    zoxide
+    yt-dlp
     fastfetch
     nitch
     cmatrix
     glow
     gum
-    waybar
-    swaynotificationcenter
-
     file
+
+    # Shells & Prompt
+    starship
+    zsh
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+
+    # File Managers
     thunar
     thunar-archive-plugin
     thunar-media-tags-plugin
     thunar-volman
     thunar-vcs-plugin
-    thunar-dropbox-plugin
-    btop
-    bat
-    rustc
-    cargo
-    yt-dlp
-    mpv-handler
+
+    # System Utilities
+    brightnessctl
     cliphist
+    direnv
+
+    # Visual
+    btop
+
+    # Desktop/WM
+    swaynotificationcenter
   ];
 
 }

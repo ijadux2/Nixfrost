@@ -15,6 +15,7 @@
     ./swaync/config.nix
     ./starship/starship.nix
     ./pkgs/jadu-pkgs.nix
+    ./modules/scripts.nix
     ./shell/zsh.nix
     ./shell/bash.nix
   ]

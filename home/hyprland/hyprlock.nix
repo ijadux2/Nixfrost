@@ -28,7 +28,7 @@ in
       background = [
         {
           monitor = "";
-          path = "$HOME/.config/background"; # Ensure this path exists
+          path = "$HOME/Pictures/wallpapers/cat_leaves.png"; # Ensure this path exists
           color = palette.base;
           blur_passes = 0;
         }
