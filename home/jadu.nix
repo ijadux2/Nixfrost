@@ -7,6 +7,7 @@
   imports = [
     ./kitty/kitty.nix
     ./hyprland/hypr.nix
+    ./hyprland/hyprlock.nix
     ./waybar/config.nix
     ./sway/config.nix
     ./sway/scripts.nix

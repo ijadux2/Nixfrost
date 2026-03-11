@@ -5,7 +5,7 @@
     enable = true;
     # enableNushellIntegration = true;
     enableZshIntegration = true;
-    enableBashIntegration = true;
+    enableBashIntegration = false;
 
     settings = {
       "$schema" = "https://starship.rs/config-schema.json";

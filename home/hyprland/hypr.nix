@@ -1,9 +1,5 @@
 { ... }:
 
-let
-  theme = import ../waybar/mocha.nix;
-in
-
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -17,7 +13,6 @@ in
     settings = {
       # --- Initialization ---
       exec-once = [
-        "waybar"
         "swww-daemon"
         "swww img /home/jadu/Pictures/wallpapers/cat_leaves.png --transition-type fade --transition-fps 60"
         "swaync"

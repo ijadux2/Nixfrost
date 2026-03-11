@@ -32,6 +32,7 @@
 
   programs = {
     zsh.enable = true;
+    zoxide.enable = true;
     hyprland.enable = true;
     nix-ld.enable = true;
     thunar.enable = true;

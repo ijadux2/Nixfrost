@@ -4,15 +4,6 @@
 
   programs.zsh = {
     enable = true;
-    oh-my-zsh = {
-      enable = true;
-      theme = "robbyrussell";
-      plugins = [
-        "git"
-        "sudo"
-        "starship"
-      ];
-    };
     shellAliases = {
       ll = "ls -l";
       cm = "cmatrix";
@@ -30,6 +21,7 @@
       gi = "git add .";
       gc = "git commit -m";
       gs = "git status";
+      gcl = "git clone";
       ch = "chmod +x";
       rm = "rm -rf";
       mk = "mkdir";
@@ -41,8 +33,5 @@
     };
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-    initContent = ''
-      eval "$(zoxide init zsh)"
-    '';
   };
 }
