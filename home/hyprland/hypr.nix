@@ -14,7 +14,7 @@
       # --- Initialization ---
       exec-once = [
         "swww-daemon"
-        "swww img /home/jadu/Pictures/wallpapers/cat_leaves.png --transition-type fade --transition-fps 60"
+        "swww img /home/jadu/Pictures/wallpapers/tree.jpg --transition-type grow --transition-fps 60 --transition-pos 0.5,0.5 --transition-duration 2"
         "swaync"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
@@ -52,8 +52,8 @@
         };
         blur = {
           enabled = true;
-          size = 5;
-          passes = 4;
+          size = 4;
+          passes = 3;
           vibrancy = 0.1696;
         };
       };
