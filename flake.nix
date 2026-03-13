@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    catppuccin.url = "github:catppuccin/nix";
 
     kitty-fonts = {
       url = "path:./fonts/JetBrainsMonoNerdFont-Regular.ttf";
@@ -27,6 +28,7 @@
       stylix,
       home-manager,
       kitty-fonts,
+      catppuccin,
       ...
     }:
     let
@@ -40,6 +42,7 @@
         modules = [
           ./configuration.nix
           stylix.nixosModules.stylix
+          catppuccin.nixosModules.catppuccin
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -50,6 +53,8 @@
               {
                 imports = [
                   ./home/jadu.nix
+                  catppuccin.homeModules.catppuccin
+
                 ];
               };
             home-manager.backupFileExtension = "backup";

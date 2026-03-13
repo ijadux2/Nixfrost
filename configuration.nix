@@ -15,11 +15,17 @@
   ++ (
     if builtins.pathExists ./hardware-configuration.nix then [ ./hardware-configuration.nix ] else [ ]
   );
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.systemd-boot.configurationLimit = 5;
   boot.loader.efi.canTouchEfiVariables = true;
   networking.hostName = "itachi";
   nix.settings.auto-optimise-store = true;
+
+  boot.loader.grub = {
+    enable = true;
+    device = "nodev"; # Required for UEFI
+    efiSupport = true;
+    useOSProber = false; # Set to true if you dual-boot with Windows
+    configurationLimit = 5; # Matches your previous limit
+  };
 
   nix.settings.trusted-users = [
     "root"
