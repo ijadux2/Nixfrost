@@ -24,6 +24,7 @@
     glow
     gum
     file
+    libnotify
 
     # Shells & Prompt
     starship

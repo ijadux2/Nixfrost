@@ -33,6 +33,12 @@
     "jadu"
   ];
 
+  # In configuration.nix
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
   users.users.jadu = {
     isNormalUser = true;
     shell = pkgs.zsh;
