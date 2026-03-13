@@ -20,7 +20,7 @@
       '';
 
       palette = "catppuccin_mocha";
-      command_timeout = 100;
+      command_timeout = 500;
 
       directory = {
         style = "fg:lavender";
@@ -30,9 +30,10 @@
         format = "[$path]($style)[$read_only]($read_only_style) ";
       };
 
+      # λ ❯
       character = {
         success_symbol = "[λ](bold fg:lavender)";
-        error_symbol = "[❯](bold fg:red)";
+        error_symbol = "[λ](bold fg:red)";
       };
 
       git_branch = {

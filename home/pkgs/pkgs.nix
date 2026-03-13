@@ -2,6 +2,9 @@
 
 {
   environment.systemPackages = with pkgs; [
+    # browser
+    chromium
+
     # Desktop & Window Manager
     gnome-keyring
     foot

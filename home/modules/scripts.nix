@@ -63,5 +63,25 @@
         echo "build complete !!"
       '';
     })
+    (pkgs.writeShellApplication {
+      name = "star";
+      runtimeInputs = with pkgs; [
+        hugo
+        git
+      ];
+      text = ''
+        startup="/home/jadu/ijadux2/Startup/"
+        cd "$startup" || exit 1
+        echo "building the project ..."
+        hugo 
+        echo "adding the build files to git .."
+        git add .
+        echo "committing all files .."
+        read -rp "commit message >> " msg
+        git commit -m "$msg"
+        echo "pushing the code to github .."
+        git push -u origin main
+      '';
+    })
   ];
 }

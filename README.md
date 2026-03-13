@@ -1,5 +1,9 @@
 # Nixfrost
 
+## rice
+
+![desktop](./assets/screenshot_2026-03-13_21-48-55.png)
+
 my nixos config for coding and daily usage.
 
 ## Utility used
@@ -7,9 +11,12 @@ my nixos config for coding and daily usage.
 - hyprland : for window manager
 - Neovim : my terminal environmet [Sharingan.nvim](https://github.com/ijadux2/Sharingan.nvim)
 - waybar : bar for hyprland
-- Zsh with Oh-my-Zsh : for shell
+- Zsh : for shell
+  - starship : for prompt
+  - zoxide : better cd
 - Kitty + Foot : for ternimal
 - Yazi : terminal file manager
+- Global theme : Catppuccin
 
 ## Installations
 
