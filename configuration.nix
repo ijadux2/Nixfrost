@@ -11,6 +11,7 @@
     ./home/pkgs/pkgs.nix
     ./home/pkgs/shell.nix
     ./home/virtual/virtual.nix
+    ./home/modules/catppuccin.nix
   ]
   ++ (
     if builtins.pathExists ./hardware-configuration.nix then [ ./hardware-configuration.nix ] else [ ]

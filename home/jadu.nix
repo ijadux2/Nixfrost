@@ -16,6 +16,7 @@
     ./starship/starship.nix
     ./pkgs/jadu-pkgs.nix
     ./modules/scripts.nix
+    ./stylix/catppuccin.nix
     ./shell/zsh.nix
     ./shell/bash.nix
   ]
