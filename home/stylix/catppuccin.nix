@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  catppucin = {
+  catppuccin = {
     accent = "lavender";
     enable = true;
     flavor = "mocha";

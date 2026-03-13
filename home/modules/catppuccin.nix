@@ -8,7 +8,7 @@
     grub.enable = true;
     grub.flavor = "mocha";
     gtk = {
-      icons = {
+      icon = {
         enable = true;
         flavor = "mocha";
         accent = "lavender";
