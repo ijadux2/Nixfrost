@@ -107,6 +107,8 @@
         "$mainMod, B, exec, chromium"
         "$mainMod, TAB, workspace, previous"
         "$mainMod, T, exec, blueman-manager"
+        "$mainMod, O, exec, vesktop"
+        "$mainMod, I, exec, whatsapp-electron"
 
         # Scripts (Using absolute paths is safer in Nix unless you use builtins.path)
         "$mainMod, D, exec, fuzzel-launcher"

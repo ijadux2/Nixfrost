@@ -33,5 +33,8 @@
     };
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+    initContent = ''
+      setopt autocd
+    '';
   };
 }
