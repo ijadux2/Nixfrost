@@ -23,7 +23,6 @@
     # Lua
     lua
     luajit
-    luajitPackages.luarocks-nix
     lua53Packages.luarocks
   ];
 }

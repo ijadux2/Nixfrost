@@ -6,81 +6,76 @@
 {
   home.packages = with pkgs; [
     (pkgs.writeShellApplication {
-      name = "hud";
+      name = "nixfy";
       runtimeInputs = with pkgs; [
         git
         hugo
+        nixos-rebuild
+        bash
       ];
       text = ''
-        project="$HOME/ijadux2/Ijadux2.blog/"
-          cd "$project" || exit 1
-          echo "building the project ..."
-          hugo 
-          echo "adding the build files to git .."
+              # Functions
+        switch_nixos() {
+          echo "Building your NixOS config..."
+          sudo nixos-rebuild switch --flake /home/jadu/codespace/Nixfrost/#itachi
+          echo "Build complete!!"
+        }
+
+        nixi() {
+          local nixos="/home/jadu/codespace/Nixfrost/"
+          cd "$nixos" || exit 1
+          echo "Adding files and committing..."
           git add .
-          echo "committing all files .."
-          read -rp "commit message >> " msg
+          read -rp "Commit msg for Nixos-config >> " msg
           git commit -m "$msg"
-          echo "pushing the code to github .."
+          echo "Pushing to GitHub..."
           git push -u origin main
-      '';
-    })
+          echo "Pushed..."
+        }
 
-    (pkgs.writeShellApplication {
-      name = "lock";
-      runtimeInputs = with pkgs; [
-        hyprlock
-      ];
-      text = ''
-        hyprlock
-      '';
-    })
+        hugo_build() {
+          local project="$HOME/ijadux2/Ijadux2.blog/"
+          cd "$project" || exit 1
+          echo "Building the project..."
+          hugo
+          echo "Adding the build files to git..."
+          git add .
+          read -rp "Commit message >> " msg
+          git commit -m "$msg"
+          git push -u origin main
+        }
 
-    (pkgs.writeShellApplication {
-      name = "nixi";
-      runtimeInputs = with pkgs; [ git ];
-      text = ''
-        nixos="/home/jadu/codespace/Nixfrost/"
-        cd "$nixos" || exit 1
-        echo "adding files and commiting .."
-        git add .
-        read -rp "Commit msg for Nixos-config >> " msg 
-        git commit -m "$msg"
-        echo "pushing to github .."
-        git push -u origin main
-        echo "pushed ..."
-      '';
-    })
+        startup() {
+          local startup_dir="$HOME/ijadux2/Startup/"
+          cd "$startup_dir" || exit 1
+          echo "Building the project..."
+          hugo
+          echo "Adding the build files to git..."
+          git add .
+          read -rp "Commit message >> " msg
+          git commit -m "$msg"
+          git push -u origin main
+        }
 
-    (pkgs.writeShellApplication {
-      name = "rebuild";
-      runtimeInputs = [
-        pkgs.nixos-rebuild
-      ];
-      text = ''
-        echo "building your nixos config .. "
-        /run/wrappers/bin/sudo  nixos-rebuild switch --flake /home/jadu/codespace/Nixfrost/#itachi
-        echo "build complete !!"
-      '';
-    })
-    (pkgs.writeShellApplication {
-      name = "star";
-      runtimeInputs = with pkgs; [
-        hugo
-        git
-      ];
-      text = ''
-        startup="/home/jadu/ijadux2/Startup/"
-        cd "$startup" || exit 1
-        echo "building the project ..."
-        hugo 
-        echo "adding the build files to git .."
-        git add .
-        echo "committing all files .."
-        read -rp "commit message >> " msg
-        git commit -m "$msg"
-        echo "pushing the code to github .."
-        git push -u origin main
+        # Logic: Check the first argument passed to the script ($1)
+        case "''${1:-}" in
+        rebuild)
+          switch_nixos
+          ;;
+        config-git)
+          nixi
+          ;;
+        hud)
+          hugo_build
+          ;;
+        star)
+          startup
+          ;;
+        *)
+          echo "Usage: nixfy {rebuild|config-git|hud|star}"
+          exit 1
+          ;;
+        esac
       '';
     })
   ];

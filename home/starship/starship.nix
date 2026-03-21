@@ -20,7 +20,6 @@
       '';
 
       palette = "catppuccin_mocha";
-      command_timeout = 500;
 
       directory = {
         style = "fg:lavender";

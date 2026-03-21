@@ -56,5 +56,11 @@
 
     # OpenCode
     opencode
+
+    # Lua tooling (for Neovim)
+    lua-language-server
+    stylua
+    luaPackages.luacheck
+    luajitPackages.luasocket
   ];
 }
