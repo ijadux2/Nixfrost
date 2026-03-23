@@ -20,11 +20,17 @@ my nixos config for coding and daily usage.
 
 ## Installations
 
-- cloning :
+- cloning:
 
 ```bash
 git clone https://github.com/ijadux2/Nixfrost.git ~/Nixfrost
 cd ~/Nixfrost
+```
+
+- nix run:
+
+```sh
+nix run --extra-experimental-features "nix-command flakes" github:ijadux2/Nixfrost
 ```
 
 > [!WARNING]
