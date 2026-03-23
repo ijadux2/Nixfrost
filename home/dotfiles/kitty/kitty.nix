@@ -33,7 +33,7 @@ in
       gpu = "True";
       confirm_os_window_close = 0;
       window_margin_width = 6;
-      draw_minimal_borders = "no";
+      draw_minimal_borders = "yes";
       background_opacity = "0.9";
       dynamic_background_opacity = "yes";
       repaint_delay = 10;

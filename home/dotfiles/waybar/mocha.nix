@@ -1,5 +1,4 @@
 {
-  # Catppuccin Mocha Colors
   colors = ''
     @define-color rosewater #f5e0dc;
     @define-color flamingo #f2cdcd;

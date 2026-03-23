@@ -23,6 +23,11 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
 
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs =
@@ -32,6 +37,7 @@
       home-manager,
       kitty-fonts,
       catppuccin,
+      agenix,
       ...
     }:
     let
@@ -47,6 +53,7 @@
           stylix.nixosModules.stylix
           catppuccin.nixosModules.catppuccin
           home-manager.nixosModules.home-manager
+          agenix.nixosModules.default
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
@@ -57,7 +64,6 @@
                 imports = [
                   ./home/jadu.nix
                   catppuccin.homeModules.catppuccin
-
                 ];
               };
             home-manager.backupFileExtension = "backup";

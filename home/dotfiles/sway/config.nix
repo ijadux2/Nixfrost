@@ -1,7 +1,6 @@
 { pkgs, lib, ... }:
 
 let
-  # Defining your Catppuccin theme as Nix variables
   theme = {
     rosewater = "#f5e0dc";
     mauve = "#cba6f7";
@@ -19,7 +18,6 @@ in
 {
   wayland.windowManager.sway = {
     enable = true;
-    # Use swayfx for the blur and corner_radius features
     package = pkgs.swayfx;
     checkConfig = false;
 
@@ -27,14 +25,12 @@ in
       modifier = "Mod4";
       terminal = "kitty";
 
-      # Gaps & Borders
       gaps = {
         inner = 5;
         outer = 5;
       };
-      bars = [ ]; # Setting to empty because you're using Waybar via its own module
+      bars = [ ];
 
-      # Startup Commands
       startup = [
         { command = "wl-paste --type text --watch cliphist store"; }
         { command = "wl-paste --type image --watch cliphist store"; }
@@ -45,10 +41,8 @@ in
         }
       ];
 
-      # Wallpaper
       output."*".bg = "/home/jadu/Pictures/wallpapers/cat_leaves.png fill";
 
-      # Keybindings
       keybindings =
         let
           mod = "Mod4";
@@ -65,7 +59,6 @@ in
           "${mod}+tab" = "workspace back_and_forth";
           "${mod}+space" = "floating toggle";
 
-          # Scripts
           "${mod}+d" = "exec ~/.config/sway/scripts/dmenu-launcher.sh";
           "${mod}+p" = "exec ~/.config/sway/scripts/dmenu-power.sh";
           "${mod}+v" = "exec ~/.config/sway/scripts/dmenu-clipboard.sh";
@@ -74,21 +67,17 @@ in
         };
     };
 
-    # SwayFX specific eye-candy and complex bar logic
     extraConfig = ''
-      # Eye Candy (SwayFX)
       blur enable
       blur_passes 4
       blur_radius 3
       corner_radius 10
       shadows enable
 
-      # Window borders
       default_border none
       default_floating_border none
       hide_edge_borders smart
 
-      # Bar configuration (using your specific theme colors)
       bar {
           position top
           height 30

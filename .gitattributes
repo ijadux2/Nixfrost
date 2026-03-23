@@ -1,2 +1,0 @@
-hardware-configuration.nix filter=git-crypt diff=git-crypt
-home/modules/ssh.nix filter=git-crypt diff=git-crypt

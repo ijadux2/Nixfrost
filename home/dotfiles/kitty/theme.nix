@@ -1,61 +1,45 @@
 {
-  # Kitty Configuration Colors
-  # This set can be imported and spread into programs.kitty.settings
-
+  # Catppuccin Mocha Colors - Inline for compatibility
   settings = {
-   # Basic Colors
     foreground = "#cdd6f4";
-    background = "#181425";
-    selection_foreground = "#181425";
+    background = "#181825";
+    selection_foreground = "#11111b";
     selection_background = "#b4befe";
 
-    # Cursor colors
     cursor = "#b4befe";
-    cursor_text_color = "#181425";
+    cursor_text_color = "#11111b";
 
-    # URL underline color
     url_color = "#b4befe";
 
-    # Kitty window border colors
     active_border_color = "#b4befe";
     inactive_border_color = "#45475a";
 
-    # Tab bar colors
     active_tab_foreground = "#11111b";
     active_tab_background = "#cba6f7";
     inactive_tab_foreground = "#cdd6f4";
     inactive_tab_background = "#181825";
 
-    # Terminal colors
-    # Black
     color0 = "#45475a";
     color8 = "#585b70";
 
-    # Red
     color1 = "#f38ba8";
     color9 = "#eba0ac";
 
-    # Green
     color2 = "#a6e3a1";
     color10 = "#94e2d5";
 
-    # Yellow
     color3 = "#f9e2af";
     color11 = "#fab387";
 
-    # Blue
     color4 = "#89b4fa";
     color12 = "#b4befe";
 
-    # Magenta
     color5 = "#cba6f7";
     color13 = "#f5c2e7";
 
-    # Cyan
     color6 = "#94e2d5";
     color14 = "#89dceb";
 
-    # White
     color7 = "#bac2de";
     color15 = "#a6adc8";
   };

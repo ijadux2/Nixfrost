@@ -102,7 +102,7 @@
         "$mainMod, Q, killactive"
         "$mainMod, E, exec, $fileManager"
         "$mainMod, SPACE, togglefloating"
-        "$mainMod, L, exec, lock"
+        "$mainMod, L, exec, hyprlock"
         "$mainMod SHIFT, N, exec, swaync-client -t -rs"
         "$mainMod, B, exec, chromium"
         "$mainMod, TAB, workspace, previous"

@@ -26,6 +26,7 @@
     # Editors
     neovim
     vim
+    vscodium
 
     # Fonts
     nerd-fonts.jetbrains-mono

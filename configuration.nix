@@ -1,5 +1,6 @@
 {
   pkgs,
+  inputs,
   ...
 }:
 
@@ -14,6 +15,7 @@
     ./home/system/virtual.nix
     ./home/modules/catppuccin.nix
     ./home/modules/distro.nix
+    ./secrets/secrets.nix
   ]
   ++ (
     if builtins.pathExists ./hardware-configuration.nix then [ ./hardware-configuration.nix ] else [ ]

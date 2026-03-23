@@ -3,7 +3,6 @@
 {
   programs.starship = {
     enable = true;
-    # enableNushellIntegration = true;
     enableZshIntegration = true;
     enableBashIntegration = false;
 
@@ -29,7 +28,6 @@
         format = "[$path]($style)[$read_only]($read_only_style) ";
       };
 
-      # λ ❯
       character = {
         success_symbol = "[λ](bold fg:lavender)";
         error_symbol = "[λ](bold fg:red)";
@@ -54,7 +52,6 @@
         only_detached = false;
       };
 
-      # Language and Tool Symbols
       bun.symbol = " ";
       c.symbol = " ";
       cpp.symbol = " ";
@@ -78,7 +75,6 @@
       xmake.symbol = " ";
       zig.symbol = " ";
 
-      # Palettes
       palettes.catppuccin_mocha = {
         rosewater = "#f5e0dc";
         flamingo = "#f2cdcd";

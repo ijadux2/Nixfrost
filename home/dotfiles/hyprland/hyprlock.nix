@@ -1,8 +1,6 @@
-{ ... }:
+{ pkgs, lib, ... }:
 
 let
-  # Defining the Catppuccin Mocha colors used in your config
-  # You can also import these from a separate palette file
   palette = {
     base = "rgb(1e1e2e)";
     text = "rgb(cdd6f4)";
@@ -28,14 +26,13 @@ in
       background = [
         {
           monitor = "";
-          path = "$HOME/Pictures/wallpapers/cat_leaves.png"; # Ensure this path exists
+          path = "$HOME/Pictures/wallpapers/cat_leaves.png";
           color = palette.base;
           blur_passes = 0;
         }
       ];
 
       label = [
-        # LAYOUT
         {
           monitor = "";
           text = "Layout: $LAYOUT";
@@ -46,7 +43,6 @@ in
           halign = "left";
           valign = "top";
         }
-        # TIME
         {
           monitor = "";
           text = "$TIME";
@@ -57,7 +53,6 @@ in
           halign = "right";
           valign = "top";
         }
-        # DATE
         {
           monitor = "";
           text = "cmd[update:43200000] date +\"%A, %d %B %Y\"";
@@ -68,7 +63,6 @@ in
           halign = "right";
           valign = "top";
         }
-        # FINGERPRINT
         {
           monitor = "";
           text = "$FPRINTPROMPT";
