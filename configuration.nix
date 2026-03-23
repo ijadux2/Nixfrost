@@ -10,7 +10,8 @@
     ./home/modules/services.nix
     ./home/pkgs/pkgs.nix
     ./home/pkgs/shell.nix
-    ./home/virtual/virtual.nix
+    ./home/system/ollama.nix
+    ./home/system/virtual.nix
     ./home/modules/catppuccin.nix
     ./home/modules/distro.nix
   ]
