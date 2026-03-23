@@ -56,6 +56,7 @@
 
     # Graphics
     mesa
+    git-crypt
 
     # OpenCode
     opencode
