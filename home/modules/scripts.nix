@@ -93,5 +93,21 @@
         esac
       '';
     })
+    (pkgs.writeShellApplication {
+      name = "nv";
+      runtimeInputs = with pkgs; [
+        fzf
+        neovim
+        bat # Added bat since you are using it in the preview
+      ];
+      text = ''
+        # No need for fn() { ... } here
+        file=$(fzf --preview 'bat --style=numbers --color=always --line-range :500 {}')
+
+        if [ -n "$file" ]; then
+          nvim "$file"
+        fi
+      '';
+    })
   ];
 }

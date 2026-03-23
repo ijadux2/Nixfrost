@@ -18,7 +18,7 @@
         "swaync"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
-        "hyprctl setcursor TAR-21 22"
+        "hyprctl setcursor Bibata-Modern-Ice  22"
       ];
 
       # --- Variables ---

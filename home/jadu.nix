@@ -1,4 +1,5 @@
 {
+  pkgs,
   ...
 }:
 
@@ -28,6 +29,8 @@
   home.sessionVariables = {
     EDITOR = "nvim";
     TERMINAL = "kitty";
+    XCURSOR_THEME = "Bibata-Modern-Ice";
+    XCURSOR_SIZE = "22";
   };
 
   programs.home-manager.enable = true;
@@ -69,6 +72,14 @@
       side-by-side = true;
       line-numbers = true;
       enableGitIntegration = true;
+    };
+  };
+
+  gtk = {
+    enable = true;
+    cursorTheme = {
+      name = "Bibata-Modern-Ice";
+      package = pkgs.bibata-cursors;
     };
   };
 }

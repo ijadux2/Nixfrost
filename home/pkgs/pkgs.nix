@@ -6,6 +6,7 @@
     chromium
     distrobox
     boxbuddy
+    fd
 
     # Desktop & Window Manager
     gnome-keyring
@@ -22,6 +23,7 @@
     slurp
     xdg-desktop-portal-hyprland
     nwg-look
+    bibata-cursors
 
     # Editors
     neovim
