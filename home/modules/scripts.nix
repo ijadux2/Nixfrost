@@ -57,6 +57,15 @@
           git push -u origin main
         }
 
+        fedora() {
+          distrobox enter fedx
+        }
+
+        gitall() {
+          read -pr "commit msg for git >> " msg 
+          git add .; git commit -m "$msg"; git push 
+        }
+
         # Logic: Check the first argument passed to the script ($1)
         case "''${1:-}" in
         rebuild)
@@ -71,8 +80,14 @@
         star)
           startup
           ;;
-        *)
-          echo "Usage: nixfy {rebuild|config-git|hud|star}"
+          fedx)
+           fedora
+          ;;
+          git)
+          gitall
+          ;;
+        help)
+          echo "Usage: nixfy {rebuild|config-git|hud|star|fedx}"
           exit 1
           ;;
         esac

@@ -4,6 +4,8 @@
   environment.systemPackages = with pkgs; [
     # browser
     chromium
+    distrobox
+    boxbuddy
 
     # Desktop & Window Manager
     gnome-keyring
@@ -42,6 +44,7 @@
     wget
     coreutils-full
     libtool
+    gcc
 
     # Bluetooth & Audio
     blueman

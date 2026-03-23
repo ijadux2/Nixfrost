@@ -12,6 +12,7 @@
     ./home/pkgs/shell.nix
     ./home/virtual/virtual.nix
     ./home/modules/catppuccin.nix
+    ./home/modules/distro.nix
   ]
   ++ (
     if builtins.pathExists ./hardware-configuration.nix then [ ./hardware-configuration.nix ] else [ ]
@@ -48,6 +49,9 @@
       "libvirtd"
       "kvm"
       "wheel"
+      "podman"
+      "video"
+      "render"
     ];
   };
   security.sudo.extraConfig = "Defaults pwfeedback";

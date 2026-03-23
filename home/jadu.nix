@@ -5,20 +5,19 @@
 {
   # home-manager modules and files
   imports = [
-    ./kitty/kitty.nix
-    ./hyprland/hypr.nix
-    ./hyprland/hyprlock.nix
-    ./waybar/config.nix
-    ./sway/config.nix
-    ./sway/scripts.nix
-    ./foot/foot.nix
-    ./swaync/config.nix
-    ./starship/starship.nix
-    ./pkgs/jadu-pkgs.nix
+    ./dotfiles/kitty/kitty.nix
+    ./dotfiles/foot/foot.nix
+    ./dotfiles/sway/config.nix
+    ./dotfiles/sway/scripts.nix
+    ./dotfiles/shell/zsh.nix
+    ./dotfiles/swaync/config.nix
+    ./dotfiles/waybar/config.nix
+    ./dotfiles/hyprland/hypr.nix
+    ./dotfiles/hyprland/hyprlock.nix
+    ./dotfiles/starship/starship.nix
     ./modules/scripts.nix
+    ./pkgs/jadu-pkgs.nix
     ./stylix/catppuccin.nix
-    ./shell/zsh.nix
-    ./shell/bash.nix
   ]
   ++ (if builtins.pathExists ./modules/ssh.nix then [ ./modules/ssh.nix ] else [ ]);
 
