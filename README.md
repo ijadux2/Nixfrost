@@ -33,12 +33,6 @@ cd ~/Nixfrost
 nix run --extra-experimental-features "nix-command flakes" github:ijadux2/Nixfrost
 ```
 
-> [!WARNING]
-> this Nixos config is locked by git-crypt so
-> remove the [Hardware-configuraton.nix](./hardware-configuration.nix) and
-> [Ssh.nix](./home/modules/ssh.nix) configuration
-> and adjust for your device.
-
 - applying system config :
 
 ```bash
