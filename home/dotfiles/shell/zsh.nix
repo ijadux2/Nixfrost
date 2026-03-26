@@ -36,6 +36,7 @@
     initContent = ''
       setopt autocd
       export LUA_SOCKET_PATH=/nix/store/7qd5w3pcl6gch38qs8f9ff80prxwi2vd-lua5.2-luasocket-3.1.0-1/share
+      fastfetch
     '';
   };
 }
