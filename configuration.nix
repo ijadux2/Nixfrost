@@ -6,7 +6,7 @@
 
 {
   imports = [
-    ./hardware-configuration.nix
+    ./hardware.nix
     ./home/modules/time.nix
     ./home/modules/services.nix
     ./home/pkgs/pkgs.nix
@@ -17,9 +17,8 @@
     ./home/modules/distro.nix
     ./secrets/secrets.nix
   ]
-  ++ (
-    if builtins.pathExists ./hardware-configuration.nix then [ ./hardware-configuration.nix ] else [ ]
-  );
+  ++ (if builtins.pathExists ./hardware.nix then [ ./hardware.nix ] else [ ]);
+
   boot.loader.efi.canTouchEfiVariables = true;
   networking.hostName = "itachi";
   nix.settings.auto-optimise-store = true;
@@ -59,6 +58,10 @@
   };
   security.sudo.extraConfig = "Defaults pwfeedback";
   nixpkgs.config.allowUnfree = true;
+
+  environment.variables = {
+    MANPAGER = "nvim +Man!";
+  };
 
   programs.nix-ld.libraries = with pkgs; [
     stdenv.cc.cc

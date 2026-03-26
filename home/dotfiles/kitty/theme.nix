@@ -14,10 +14,11 @@
     active_border_color = "#b4befe";
     inactive_border_color = "#45475a";
 
-    active_tab_foreground = "#11111b";
-    active_tab_background = "#cba6f7";
-    inactive_tab_foreground = "#cdd6f4";
-    inactive_tab_background = "#181825";
+    active_tab_foreground = "#1e1e2e";
+    active_tab_background = "#b4befe";
+
+    inactive_tab_foreground = "#181825";
+    inactive_tab_background = "#45475a";
 
     color0 = "#45475a";
     color8 = "#585b70";

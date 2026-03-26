@@ -31,6 +31,7 @@
     TERMINAL = "kitty";
     XCURSOR_THEME = "Bibata-Modern-Ice";
     XCURSOR_SIZE = "22";
+    MANPAGER = "nvim +Man!";
   };
 
   programs.home-manager.enable = true;
@@ -77,6 +78,19 @@
 
   gtk = {
     enable = true;
+    theme = {
+      name = "Catppuccin-Mocha-Standard-Lavender-Dark";
+      package = pkgs.catppuccin-gtk.override {
+        variant = "mocha";
+        accents = [ "lavender" ];
+        size = "standard";
+        tweaks = [ "rimless" ];
+      };
+    };
+    font = {
+      name = "Iosevka Nerd Font";
+      size = 14; # 11 is usually the sweet spot for Iosevka
+    };
     cursorTheme = {
       name = "Bibata-Modern-Ice";
       package = pkgs.bibata-cursors;

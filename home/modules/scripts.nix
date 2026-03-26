@@ -12,6 +12,7 @@
         hugo
         nixos-rebuild
         bash
+        ollama
       ];
       text = ''
               # Functions
@@ -19,6 +20,13 @@
           echo "Building your NixOS config..."
           sudo nixos-rebuild switch --flake /home/jadu/codespace/Nixfrost/#itachi
           echo "Build complete!!"
+        }
+
+        manim() {
+          echo -n "topic for man >> "
+          read -r to
+          [[ -z "$to" ]] && return
+          nvim -c "Man $to" +only
         }
 
         nixi() {
@@ -62,12 +70,24 @@
         }
 
         gitall() {
-          read -pr "commit msg for git >> " msg 
-          git add .; git commit -m "$msg"; git push 
+          read -pr "commit msg for git >> " msg
+          git add .
+          git commit -m "$msg"
+          git push
+        }
+
+        web() {
+          webui="/home/jadu/ijadux2/zetsu/web-ui/"
+          port="1709"
+          cd "$webui" || echo "cd failed, serving from $(pwd)"
+          python3 -m http.server $port
         }
 
         # Logic: Check the first argument passed to the script ($1)
         case "''${1:-}" in
+        ui)
+          web
+          ;;
         rebuild)
           switch_nixos
           ;;
@@ -80,11 +100,14 @@
         star)
           startup
           ;;
-          fedx)
-           fedora
+        fedx)
+          fedora
           ;;
-          git)
+        git)
           gitall
+          ;;
+        man)
+          manim
           ;;
         help)
           echo "Usage: nixfy {rebuild|config-git|hud|star|fedx}"

@@ -66,7 +66,6 @@
                   catppuccin.homeModules.catppuccin
                 ];
               };
-            home-manager.backupFileExtension = "backup";
           }
         ];
       };
