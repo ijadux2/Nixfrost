@@ -91,7 +91,7 @@
         rebuild)
           switch_nixos
           ;;
-        config-git)
+        git)
           nixi
           ;;
         hud)
@@ -103,13 +103,13 @@
         fedx)
           fedora
           ;;
-        git)
+        git-add)
           gitall
           ;;
         man)
           manim
           ;;
-        help)
+        -h)
           echo "Usage: nixfy {rebuild|config-git|hud|star|fedx}"
           exit 1
           ;;

@@ -28,14 +28,15 @@
         format = "[$path]($style)[$read_only]($read_only_style) ";
       };
 
+      # λ $ %
       character = {
-        success_symbol = "[λ](bold fg:lavender)";
-        error_symbol = "[λ](bold fg:red)";
+        success_symbol = "[%](bold fg:lavender)";
+        error_symbol = "[%](bold fg:red)";
       };
 
       git_branch = {
         symbol = " ";
-        style = "bold fg:mauve";
+        style = "bold fg:lavender";
         format = "[$symbol$branch]($style) ";
       };
 
@@ -47,7 +48,7 @@
       git_commit = {
         tag_symbol = "  ";
         format = "[ $hash]($style) ";
-        style = "fg:overlay1";
+        style = "fg:lavender";
         commit_hash_length = 7;
         only_detached = false;
       };

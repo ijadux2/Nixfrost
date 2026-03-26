@@ -45,7 +45,10 @@ in
       # Tab Bar
       tab_bar_min_tabs = 1;
       tab_bar_style = "powerline";
+      tab_powerline_style = "round";
       tab_bar_edge = "top";
+      tab_title_template = "{index}: {title}";
+      active_tab_title_template = "  {index}: {title}";
       active_tab_font_style = "normal";
       inactive_tab_font_style = "normal";
 

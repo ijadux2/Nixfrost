@@ -7,6 +7,7 @@
     distrobox
     boxbuddy
     fd
+    unzip
 
     # Desktop & Window Manager
     gnome-keyring
