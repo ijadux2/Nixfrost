@@ -132,5 +132,16 @@
         fi
       '';
     })
+    (pkgs.writeShellApplication {
+      name = "mp";
+      runtimeInputs = with pkgs; [
+        bash
+        fzf
+        ffmpeg_7-full
+      ];
+      text = ''
+        bash ~/codespace/music-player/fzf.sh
+      '';
+    })
   ];
 }
