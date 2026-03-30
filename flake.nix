@@ -5,6 +5,11 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     catppuccin.url = "github:catppuccin/nix";
 
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     kitty-fonts = {
       url = "path:./fonts/JetBrainsMonoNerdFont-Regular.ttf";
       flake = false;
@@ -36,6 +41,7 @@
       stylix,
       home-manager,
       kitty-fonts,
+      zen-browser,
       catppuccin,
       agenix,
       ...

@@ -2,7 +2,7 @@
   # Catppuccin Mocha Colors - Inline for compatibility
   settings = {
     foreground = "#cdd6f4";
-    background = "#181825";
+    background = "#1e1e2e";
     selection_foreground = "#11111b";
     selection_background = "#b4befe";
 

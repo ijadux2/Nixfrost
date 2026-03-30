@@ -4,8 +4,6 @@
   wayland.windowManager.hyprland = {
     enable = true;
 
-    # 1. FIX: Use an absolute path or a Nix-path relative to this file.
-    # If mocha.conf is in the same folder as this nix file, use ./mocha.conf
     extraConfig = ''
       ${builtins.readFile ./mocha.conf}
     '';
@@ -14,11 +12,11 @@
       # --- Initialization ---
       exec-once = [
         "swww-daemon"
-        "swww img /home/jadu/Pictures/wallpapers/tree.jpg --transition-type grow --transition-fps 60 --transition-pos 0.5,0.5 --transition-duration 2"
+        "swww img /home/jadu/Pictures/wallpapers/cat_leaves.png --transition-type grow --transition-fps 60 --transition-pos 0.5,0.5 --transition-duration 2"
         "swaync"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
-        "hyprctl setcursor Bibata-Modern-Ice  22"
+        "hyprctl setcursor macOS  22"
       ];
 
       # --- Variables ---
@@ -104,7 +102,7 @@
         "$mainMod, SPACE, togglefloating"
         "$mainMod, L, exec, hyprlock"
         "$mainMod SHIFT, N, exec, swaync-client -t -rs"
-        "$mainMod, B, exec, chromium"
+        "$mainMod, B, exec, zen"
         "$mainMod, TAB, workspace, previous"
         "$mainMod, T, exec, blueman-manager"
         "$mainMod, O, exec, vesktop"

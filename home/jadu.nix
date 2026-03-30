@@ -29,7 +29,7 @@
   home.sessionVariables = {
     EDITOR = "nvim";
     TERMINAL = "kitty";
-    XCURSOR_THEME = "Bibata-Modern-Ice";
+    XCURSOR_THEME = "macOS";
     XCURSOR_SIZE = "22";
     MANPAGER = "nvim +Man!";
   };
@@ -92,8 +92,7 @@
       size = 14; # 11 is usually the sweet spot for Iosevka
     };
     cursorTheme = {
-      name = "Bibata-Modern-Ice";
-      package = pkgs.bibata-cursors;
+      name = "macOS";
     };
   };
 }

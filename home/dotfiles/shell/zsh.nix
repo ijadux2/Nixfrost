@@ -30,6 +30,7 @@
       fa = "fastfetch";
       th = "thunar";
       gp = "git push -u origin main";
+      ki = "kitty @ set-tab-title";
     };
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;

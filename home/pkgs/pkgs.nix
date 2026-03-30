@@ -1,9 +1,13 @@
-{ pkgs, ... }:
-
+{
+  pkgs,
+  inputs,
+  ...
+}:
 {
   environment.systemPackages = with pkgs; [
     # browser
     chromium
+    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     distrobox
     boxbuddy
     fd
@@ -34,6 +38,7 @@
     # Fonts
     nerd-fonts.jetbrains-mono
     nerd-fonts.symbols-only
+    apple-cursor
 
     # Media
     ffmpeg_7-full
